@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <div class="container mt-5">
+        <h1>{% if object %}Edit Book{% else %}Add Book{% endif %}</h1>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+        <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
